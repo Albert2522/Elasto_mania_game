@@ -26,7 +26,7 @@ With this Elasto Mania version, users is able to:
 This app will consist of a single screen with game board, game controls, and nav links to the Github, my LinkedIn,
 and the About modal.  Game controls will include Start, Pause, Reset the Game, Instructions button and Sample Video button. To control the bike, user should use keyboard.
 
-![wireframes](images/wireframes.jpeg)
+![wireframes](/images/wireframes.jpeg)
 
 ### Architecture and Technologies
 
