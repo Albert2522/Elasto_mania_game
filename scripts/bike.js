@@ -59,9 +59,12 @@ function (vector, physics, render, lines) {
             constraints.forEach(function (constraint) {
                 render.line(constraint.v1, constraint.v2);
             });
-            circles.forEach(function(circle) {
-                render.circle(circle.pos.x, circle.pos.y, circle.radius, circle.rotation);
-            });
+                render.circle(circles[0].pos.x, circles[0].pos.y, circles[0].radius, circles[0].rotation, "head");
+                render.circle(circles[1].pos.x, circles[1].pos.y, circles[1].radius, circles[1].rotation, "wheel");
+                render.circle(circles[2].pos.x, circles[2].pos.y, circles[2].radius, circles[2].rotation, "wheel");
+            if (Math.abs(head.pos.y - head.prevpos.y) > 1 ) {
+              render.moveView(head.pos.x - head.prevpos.x, head.pos.y - head.prevpos.y  -1);
+            }
         }
     };
 });

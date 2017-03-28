@@ -10,7 +10,6 @@ document.onkeypress = function(ev) {
     switch(ev.keyCode) {
     case 119:
         bike.accelerating = true;
-        console.log(bike);
         break;
     case 115:
         bike.breaking = true;
