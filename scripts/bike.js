@@ -1,5 +1,6 @@
 define(["vector", "physics", "render", "lines"],
 function (vector, physics, render, lines) {
+    console.log(lines);
     var circles = [physics.circle(20, 150, 0),
                    physics.circle(20, 200, 86),
                    physics.circle(20, 100, 86)];
