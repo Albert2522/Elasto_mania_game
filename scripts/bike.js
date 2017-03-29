@@ -7,9 +7,9 @@ function (vector, physics, render, lines) {
     var head = circles[0];
     var front = circles[1];
     var back = circles[2];
-    var constraints = [physics.constraint(head, front, 100),
-                       physics.constraint(head, back, 100),
-                       physics.constraint(front, back, 100)];
+    var constraints = [physics.constraint(head, front, 80),
+                       physics.constraint(head, back, 80),
+                       physics.constraint(front, back, 80)];
     var wheelAcceleration = 0.1;
 
     return {
@@ -57,14 +57,13 @@ function (vector, physics, render, lines) {
         },
 
         render: function() {
-            constraints.forEach(function (constraint) {
-                render.line(constraint.v1, constraint.v2);
-            });
+                render.line(constraints[0].v1, constraints[0].v2, "front spring");
+                render.line(constraints[1].v1, constraints[1].v2, "back spring");
                 render.circle(circles[0].pos.x, circles[0].pos.y, circles[0].radius, circles[0].rotation, "head");
                 render.circle(circles[1].pos.x, circles[1].pos.y, circles[1].radius, circles[1].rotation, "wheel");
                 render.circle(circles[2].pos.x, circles[2].pos.y, circles[2].radius, circles[2].rotation, "wheel");
-            if (Math.abs(head.pos.y - head.prevpos.y) > 1 ) {
-              render.moveView(head.pos.x - head.prevpos.x, head.pos.y - head.prevpos.y  -1);
+            if (Math.abs(head.pos.y - head.prevpos.y) > 0 ) {
+              render.moveView(head.pos.x - head.prevpos.x, 0);
             }
         }
     };
