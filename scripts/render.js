@@ -24,7 +24,7 @@ define(["vector" ,"lines"], function (vector) {
         background: function () {
           // console.log(offset.x);
           if (background.complete) {
-            ctx.drawImage(background,0,0, 10000, 400);
+            ctx.drawImage(background,0,0);
           } else {
             background.onload = function () {
               ctx.drawImage(background,0,0);
