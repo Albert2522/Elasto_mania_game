@@ -68,11 +68,11 @@ function init() {
 
 function update() {
     render.clear();
-    lines.forEach(function (line) {
-        render.line(line.p1, line.p2);
-    });
+    render.background();
+    render.line(lines, 0);
     bike.update();
-    render.blit();
+    render.final_flag();
+    // render.blit();
 
     stats.update();
     window.requestAnimationFrame(update);

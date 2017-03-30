@@ -35,6 +35,8 @@ function (vector, physics, render, lines) {
               document.location.reload();
             });
 
+            
+
             circles.forEach(function(circle) {
                 if (circle === back) {
                     if (that.accelerating) {
@@ -57,9 +59,9 @@ function (vector, physics, render, lines) {
         },
 
         render: function() {
+                render.circle(circles[0].pos.x, circles[0].pos.y, circles[0].radius, circles[0].rotation, "head");
                 render.line(constraints[0].v1, constraints[0].v2, "front spring");
                 render.line(constraints[1].v1, constraints[1].v2, "back spring");
-                render.circle(circles[0].pos.x, circles[0].pos.y, circles[0].radius, circles[0].rotation, "head");
                 render.circle(circles[1].pos.x, circles[1].pos.y, circles[1].radius, circles[1].rotation, "wheel");
                 render.circle(circles[2].pos.x, circles[2].pos.y, circles[2].radius, circles[2].rotation, "wheel");
             if (Math.abs(head.pos.y - head.prevpos.y) > 0 ) {
