@@ -5,18 +5,18 @@ define(["vector" ,"lines"], function (vector) {
     var twoPI = Math.PI / 10 + 0.0001;
     var head = new Image();
     var wheel = new Image();
-    head.src = "/Users/albertabdrashitov/Desktop/body.png";
-    wheel.src = "/Users/albertabdrashitov/Desktop/wheel1.png";
+    head.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/body.png";
+    wheel.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/wheel1.png";
     var background = new Image();
     var sun = new Image();
     var angry_sun = new Image();
     var clouds = new Image();
     var flag = new Image();
-    flag.src = "/Users/albertabdrashitov/Desktop/finish_flag.png";
-    clouds.src = "/Users/albertabdrashitov/Desktop/clouds_s.png"
-    angry_sun.src = "/Users/albertabdrashitov/Desktop/angry_sun.png"
-    sun.src = "/Users/albertabdrashitov/Desktop/sun.png"
-    background.src = "/Users/albertabdrashitov/Desktop/elmo/elmo_game/images/sky1.png";
+    flag.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/finish_flag.png";
+    clouds.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/clouds_s.png"
+    angry_sun.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/angry_sun.png"
+    sun.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/sun.png"
+    background.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/sky1.png";
     return {
         width: canvas.width,
         height: canvas.height,
