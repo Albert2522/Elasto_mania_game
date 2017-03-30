@@ -3,6 +3,7 @@ function (vector, render, physics, bike, lines) {
 
 // Globals
 var stats = {};
+window.level = 3;
 
 // Handle keyboard input
 document.onkeypress = function(ev) {
@@ -58,18 +59,17 @@ document.onmousemove = function(ev) {
     }
 };
 
-
 function init() {
     stats = new Stats();
     document.body.appendChild(stats.domElement);
-
+    window.lines = lines.mapGenerator(3);
     update();
 }
 
 function update() {
     render.clear();
     render.background();
-    render.line(lines, 0);
+    render.line(window.lines, 0);
     bike.update();
     render.final_flag();
     // render.blit();

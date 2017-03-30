@@ -116,13 +116,14 @@ define(["vector" ,"lines"], function (vector) {
               ctx.beginPath();
               ctx.lineWidth = 1;
               ctx.lineTo(arr[0].p1.x, arr[0].p1.y);
-              let i = 0;
-              while (i < arr.length) {
+              let i = 1;
+              while (i < arr.length - 1) {
                 ctx.lineTo(arr[i].p2.x, arr[i].p2.y);
                 i++;
               }
               ctx.lineTo(arr[--i].p2.x, 600);
               ctx.lineTo(arr[0].p1.x, 600);
+              ctx.lineTo(arr[0].p1.x, arr[0].p1.y);
               ctx.stroke();
               ctx.closePath();
               ctx.fill();

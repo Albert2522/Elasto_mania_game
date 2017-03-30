@@ -1,6 +1,5 @@
 define(["vector", "physics", "render", "lines"],
 function (vector, physics, render, lines) {
-    console.log(lines);
     var circles = [physics.circle(20, 150, 0),
                    physics.circle(20, 200, 86),
                    physics.circle(20, 100, 86)];
@@ -11,6 +10,7 @@ function (vector, physics, render, lines) {
                        physics.constraint(head, back, 80),
                        physics.constraint(front, back, 80)];
     var wheelAcceleration = 0.1;
+    var level = window.level;
 
     return {
         accelerating: false,
@@ -29,13 +29,12 @@ function (vector, physics, render, lines) {
             constraints.forEach(function (constraint) {
                 constraint.solve();
             });
-
-            head.detectCollisions(lines, (e) => {
-              alert("Game Over");
-              document.location.reload();
+            head.detectCollisions(window.lines, (e) => {
+              // alert("Game Over");
+              // document.location.reload();
             });
 
-            
+
 
             circles.forEach(function(circle) {
                 if (circle === back) {
@@ -45,7 +44,7 @@ function (vector, physics, render, lines) {
                 }
                 circle.integrate();
                 if (that.breaking) circle.rotationSpeed = 0;
-                circle.detectCollisions(lines, function(nearestPointOnLine) {
+                circle.detectCollisions(window.lines, function(nearestPointOnLine) {
                     var offset = circle.projectOut(nearestPointOnLine);
                     if (that.breaking) {
                         circle.rotate(offset, 0);

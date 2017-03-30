@@ -97,7 +97,7 @@ function(vector, Thing, render) {
 
                     return function(lines, onCollisionCallback) {
                         var that = this;
-
+                        let level = window.level;
                         lines.forEach(function (line) {
                             nearestPointOnLine = line.nearestPoint(that.pos);
                             pointToPos.setVec(that.pos).sub(nearestPointOnLine);
