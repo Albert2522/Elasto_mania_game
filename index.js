@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("newButton").addEventListener("click", function() {
     window.new_game = true;
+    window.level = 1;
   });
   document.getElementById("normalButton").addEventListener("click", function() {
     window.mode = "normal";

@@ -159,6 +159,7 @@ function start() {
   }
 
     if (window.new_game) {
+      window.level = 1;
       window.lines = lines.mapGenerator(window.level);
       window.mode = "normal";
       window.change_mode = false;

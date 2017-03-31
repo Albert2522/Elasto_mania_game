@@ -216,6 +216,7 @@ define(["vector" ,"lines"], function (vector) {
             ctx.translate(-diffx, -diffy);
             offset.x += diffx;
             offset.y += diffy;
+            window.offset = offset;
         },
 
         blit: function() {
