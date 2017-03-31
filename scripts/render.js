@@ -36,6 +36,7 @@ define(["vector" ,"lines"], function (vector) {
           } else {
             background.onload = function () {
               ctx.drawImage(background,0,0);
+              console.log("complete");
             };
           }
           ctx.stroke;

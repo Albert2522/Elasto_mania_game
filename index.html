@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Elasto Mania</title>
+    <title>Extreme Jelly Bike 2</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
     <script src="scripts/libs/stats.js"></script>
+    <script type="text/javascript" src="index.js"></script>
     <script data-main="scripts/main" src="scripts/libs/require.js"></script>
   </head>
-
   <body>
-    <canvas id="canvas" width="800px" height="600px"></canvas>
+    <header>
+      <h1>Extreme Jelly Bike 2</h1>
+    </header>
+    <!-- Left Side Bar -->
+    <div class="left">
+      <button type="button" id="newButton">NEW GAME</button>
+      <button type="button" id="normalButton">NORMAL</button>
+      <button type="button" id="stiltsButton">STILTS MODE</button>
+      <div id="jellynessBox">
+        <p>Set Jellyness</p>
+        <input type="range" id="jellySlider" min="0.01" max="0.24" value="0.04">
+      </div>
+      <h2>LEVEL: <span class="stat" id="levelCount"></span></h2>
+      <h2>LIVES: <span class="stat" id="lifeCount"></span></h2>
+      <h2>PROGRESS: <span class="stat" id="levelProgress"></span></h2>
+      <h2>JELLYNESS: <span class="stat" id="jellyStat"></span></h2>
+    </div>
+    <!-- Right Side Bar -->
+    <div class="right">
+      <h3>INSTRUCTIONS</h3>
+      <hr>
+      <div class="sidebarButton" id="accelerateButton">
+        <p>ACCELERATE:</p>
+        <img src="https://img.webnots.com/2014/03/D1.png" alt="D">
+      </div>
+      <div class="sidebarButton" id="reverseButton">
+        <p>REVERSE:</p>
+        <img src="https://img.webnots.com/2014/03/S1.png" alt="S">
+      </div>
+      <div class="sidebarButton" id="brakeButton">
+        <p>BRAKE:</p>
+        <img src="https://img.webnots.com/2014/03/A1.png" alt="A">
+      </div>
+      <div class="sidebarButton" id="pauseButton">
+        <p>PAUSE GAME:</p>
+        <img id="spacebarImg" src="https://img.webnots.com/2014/03/Space1.png" alt="Spacebar">
+      </div>
+    </div>
+
+    <div class="canvasContainer">
+      <canvas id="canvas" width='800' height='600'></canvas>
+    </div>
+
+
   </body>
 </html>
