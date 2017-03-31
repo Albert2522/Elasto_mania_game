@@ -11,7 +11,7 @@ function levelProgress() {
 // p.addEventListener("change", function() {
 //
 // });
-var jellyness = document.querySelector("jellySlider");
+var jellyness = document.querySelector("#jellySlider");
 jellyness.addEventListener("change", function() {
   var jellyValue = Number(jellyness.value);
   window.jellyness = jellyValue;
