@@ -18,6 +18,8 @@ window.requestAnimFrame = (function() {
             };
 })();
 
+document.getElementById("newButton").addEventListener("click", () => alert("here"));
+
 // Handle keyboard input
 document.onkeypress = function(ev) {
     //console.log(ev.keyCode)
@@ -72,14 +74,15 @@ document.onmousedown = function(ev) {
 };
 
 document.onmouseup = function(ev) {
+    console.log(ev.screenX);
     mouse.clicked = false;
 };
 
 document.onmousemove = function(ev) {
     if (mouse.clicked) {
-        render.moveView(-ev.screenX + mouse.pos.x, -ev.screenY + mouse.pos.y);
+        render.moveView(-ev.screenX + mouse.pos.x, 0);
         mouse.pos.x = ev.screenX;
-        mouse.pos.y = ev.screenY;
+        // mouse.pos.y = ev.screenY;
     }
 };
 
@@ -88,6 +91,7 @@ function init() {
     document.body.appendChild(stats.domElement);
     window.lines = lines.mapGenerator(window.level);
     window.lives = 3;
+    window.jellyness = 0.04;
     window.restart_round = false;
     window.pause = false;
     window.finish = false;
