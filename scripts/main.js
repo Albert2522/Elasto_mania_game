@@ -18,8 +18,8 @@ window.requestAnimFrame = (function() {
 
 // Handle keyboard input
 document.onkeypress = function(ev) {
-    //console.log(ev.keyCode)
-    switch(ev.keyCode) {
+    var key = ev.keyCode || ev.charCode;
+    switch(key) {
     case 100:
         bike.accelerating = true;
         break;
@@ -40,7 +40,8 @@ document.onkeypress = function(ev) {
 };
 
 document.onkeyup = function(ev) {
-    switch(ev.keyCode) {
+    var key = ev.keyCode || ev.charCode;
+    switch(key) {
     case 83:
       window.bike_reverse = false;
       bike.accelerating = false;
