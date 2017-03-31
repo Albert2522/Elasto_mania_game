@@ -26,14 +26,11 @@ document.onkeypress = function(ev) {
     case 97:
         bike.breaking = true;
         break;
-    case 32:
-        bike.swap();
-        break;
     case 115:
         window.bike_reverse = true;
         bike.accelerating = true;
         break;
-    case 13:
+    case 32:
         window.pause = window.lives === 0 ? window.pause : !window.pause;
         break;
     default:
@@ -85,7 +82,10 @@ function init() {
     // stats = new Stats();
     // document.body.appendChild(stats.domElement);
     window.lines = lines.mapGenerator(window.level);
+    window.new_game = false;
     window.lives = 3;
+    window.change_mode = false;
+    window.mode = "normal";
     window.jellyness = 0.04;
     window.restart_round = false;
     window.pause = false;
@@ -113,8 +113,13 @@ function update() {
     }
     if (window.lives === 0) {
       render.show_game_over();
-      setTimeout(() => window.location.reload(), 5000);
       window.pause = true;
+    }
+
+    if (window.change_mode) {
+      window.change_mode = false;
+      bike.renew_pos();
+      render.new_raund();
     }
 
     if (window.finish) {
@@ -136,6 +141,22 @@ function start() {
     if (!window.pause) {
     update();
   }
+
+    if (window.new_game) {
+      window.lines = lines.mapGenerator(window.level);
+      window.mode = "normal";
+      window.change_mode = false;
+      window.new_game = false;
+      window.lives = 3;
+      window.jellyness = 0.04;
+      window.restart_round = false;
+      window.pause = false;
+      window.finish = false;
+      window.level_up = false;
+      bike.renew_pos();
+      render.new_raund();
+    }
+
     if (window.pause && window.lives !== 0 && !window.restart_round) {
       render.pause_image();
     }
