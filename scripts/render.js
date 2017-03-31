@@ -119,7 +119,7 @@ define(["vector" ,"lines"], function (vector) {
         show_blood_spot: function () {
           if (blood_spot.complete) {
             console.log("here");
-            ctx.drawImage(blood_spot, offset.x, 0 );
+            ctx.drawImage(blood_spot, offset.x, 50 );
           } else {
             blood_spot.onload = function () {
               ctx.drawImage(blood_spot, offset.x, 0 );
