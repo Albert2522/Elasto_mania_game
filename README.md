@@ -8,11 +8,11 @@ The player controls a motorbike rider, and has to restart the level if  their he
 
 The physical model, such as the elasticity of the bike frame, permits a wide range of tricks to be performed.
 
-There is some "Stilts mode" which is generally an easy mode. This mode helps to accomplish some levels(>10).
+There is a some "Stilts mode" which is generally an easy mode. This mode helps to accomplish some levels(>10).
 
 Also user can control Jellyness of the bike using slidebar. Usually make bike more "jelly" helps to complete more bumpy maps.
 
-Using all of these features provides to User the big variety of trick.
+Using all of these features provides to User the big variety of tricks.
 
 This game contains built-in level-generator, so number of levels is inifinite.
 
@@ -21,12 +21,12 @@ Even I did this game, my best result is level 9. Try to beat it! :-)
 
 ### Functionality & MVP  
 
-With this Elasto Mania version, users is able to:
+With this Extreme Jelly Bike version, user is able to:
 
 - [ ] Start, pause, and reset the game board
 - [ ] Drive forward, backward and stop the bike
-- [ ] Change physics during the game using controllers
-- [ ] Finish the game
+- [ ] Change the bike physics during the game using controllers
+- [ ] Has built-in level generator.
 
 
 ### Architecture and Technologies
@@ -36,7 +36,7 @@ This project will is implemented with the following technologies:
 - Vanilla JavaScript for overall structure and game logic,
 - `HTML5 Canvas` for DOM manipulation and rendering,
 - Verlet integration and simple vector geometry,
-- To implement bike model Advanced Character Physics by Thomas Jakobsen (http://www.cs.cmu.edu/afs/cs/academic/class/15462-s13/www/lec_slides/Jakobsen.pdf),
+- Advanced Character Physics by Thomas Jakobsen (http://www.cs.cmu.edu/afs/cs/academic/class/15462-s13/www/lec_slides/Jakobsen.pdf) for implementation of bike's model,
 - Stats.js as js performance monitor(frames rendered in the last second and etc)
 - Require.js to bundle and serve up the various scripts.
 
@@ -46,4 +46,4 @@ This project will is implemented with the following technologies:
 - Change bike physics to rotate the bike's body while jumping
 - Add "Jump feature"
 
-P.s There is no "Extreme Jelly Bike 1", just like this name. :-)
+P.s There is no "Extreme Jelly Bike 1", I just like this name :-)
