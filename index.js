@@ -75,6 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
     window.accel = false;
   });
 
+  document.getElementById("accelerateButton").addEventListener("touchstart", function() {
+    window.mouse_pressed = true;
+    window.accel = true;
+  });
+
+  document.getElementById("accelerateButton").addEventListener("touchend", function() {
+    window.mouse_pressed = true;
+    window.accel = false;
+  });
+
   document.getElementById("reverseButton").addEventListener("mousedown", function() {
     window.mouse_pressed = true;
     window.revcel = true;
