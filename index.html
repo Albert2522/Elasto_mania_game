@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
     <script src="scripts/libs/stats.js"></script>
+    <script type="text/javascript" src="index.js"></script>
     <script data-main="scripts/main" src="scripts/libs/require.js"></script>
   </head>
   <body>
@@ -15,12 +16,16 @@
     <!-- Left Side Bar -->
     <div class="left">
       <button type="button" id="newButton">NEW GAME</button>
-      <button type="button" id="easyButton">EASY</button>
-      <button type="button" id="hardButton">HARD</button>
+      <button type="button" id="normalButton">NORMAL</button>
+      <button type="button" id="stiltsButton">STILTS MODE</button>
+      <div id="jellynessBox">
+        <p>Set Jellyness</p>
+        <input type="range" id="jellySlider" min="0.01" max="0.24" value="0.04">
+      </div>
       <h2>LEVEL: <span class="stat" id="levelCount"></span></h2>
       <h2>LIVES: <span class="stat" id="lifeCount"></span></h2>
       <h2>PROGRESS: <span class="stat" id="levelProgress"></span></h2>
-
+      <h2>JELLYNESS: <span class="stat" id="jellyStat"></span></h2>
     </div>
     <!-- Right Side Bar -->
     <div class="right">
@@ -48,6 +53,6 @@
       <canvas id="canvas" width='800' height='600'></canvas>
     </div>
 
-    <script type="text/javascript" src="index.js"></script>
+
   </body>
 </html>

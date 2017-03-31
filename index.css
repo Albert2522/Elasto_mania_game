@@ -113,3 +113,10 @@ p {
 #levelProgress {
   margin-left: 25%;
 }
+#jellySlider:hover {
+  cursor: pointer;
+}
+#jellynessBox {
+  margin: 0 auto;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
