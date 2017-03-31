@@ -23,6 +23,19 @@ function (vector, physics, render, lines) {
             wheelAcceleration = -wheelAcceleration;
         },
 
+        renew_pos: function () {
+          circles = [physics.circle(20, 150, 0),
+                     physics.circle(20, 200, 86),
+                     physics.circle(20, 100, 86)];
+
+          head = circles[0];
+          front = circles[1];
+          back = circles[2];
+          constraints = [physics.constraint(head, front, 80),
+                         physics.constraint(head, back, 80),
+                         physics.constraint(front, back, 80)];
+        },
+
         update: function() {
             var that = this;
 
@@ -30,9 +43,16 @@ function (vector, physics, render, lines) {
                 constraint.solve();
             });
             head.detectCollisions(window.lines, (e) => {
-              // alert("Game Over");
-              // document.location.reload();
+              if (window.lives > 0) {
+                window.lives -= 1;
+                window.pause = true;
+                window.restart_round = true;
+              }
             });
+
+            if (head.pos.x >= 3940) {
+              window.finish = true;
+            }
 
 
 
@@ -58,6 +78,7 @@ function (vector, physics, render, lines) {
         },
 
         render: function() {
+                // console.log(head.pos.x, head.pos.y);
                 render.circle(circles[0].pos.x, circles[0].pos.y, circles[0].radius, circles[0].rotation, "head");
                 render.line(constraints[0].v1, constraints[0].v2, "front spring");
                 render.line(constraints[1].v1, constraints[1].v2, "back spring");

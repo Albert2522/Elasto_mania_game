@@ -3,27 +3,29 @@ define(["physics"], function (physics) {
     //         physics.line(90, 250, 140, 150)];
 
     var mapGenerator = function(level) {
-      let max_high_between = 50;
+      let max_high_between = 10 + (level - 1) * 2;
       let initial_height = 350;
-      let min_distance_between = 100;
-      let curr_x = 0;
+      let min_distance_between = 100 - (level - 1) * 2;
+      let curr_x = 230;
       let curr_y = initial_height;
       let arr = [ ];
-      let dist = 4000;
+      let dist = 3710;
       arr.push(physics.line(0, 350, 0, 0));
+      arr.push(physics.line(0, 350, 230, 350));
       while (dist > 0) {
         let multiplyer = Math.random() > 0.5 ? 1 : -1;
         let set_dist = Math.floor(Math.random() * 50) + min_distance_between;
         let set_height = curr_y + max_high_between * multiplyer;
         set_height = set_height > 600 ? 600 : set_height;
         set_height = set_height < 140 ? 140 : set_height;
-        let new_x = (dist - set_dist) >= 0 ? curr_x + set_dist : 4000;
+        let new_x = (dist - set_dist) >= 0 ? curr_x + set_dist : 3940;
         arr.push(physics.line(curr_x, curr_y, new_x, set_height));
         curr_y = set_height;
         dist = dist - (new_x - curr_x);
         curr_x = new_x;
 
       }
+      arr.push(physics.line(curr_x, curr_y, 4000, curr_y));
       arr.push(physics.line(4000, curr_y, 4000, -600));
       // arr.push(physics.line(4000, curr_y, 4000, 0));
       // arr.push(physics.line(4000, 600, 0, 600));

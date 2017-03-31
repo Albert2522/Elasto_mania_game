@@ -145,7 +145,7 @@ function(vector, Thing, render) {
 
                     if (this.curDist != this.dist) {
                         var ratio = (1 - curDist/this.dist) / 2;
-                        this.distVec.scale(ratio*0.14);
+                        this.distVec.scale(ratio*0.04);
                         this.v1.sub(this.distVec);
                         this.v2.add(this.distVec);
                     }

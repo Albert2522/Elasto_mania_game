@@ -12,11 +12,17 @@ define(["vector" ,"lines"], function (vector) {
     var angry_sun = new Image();
     var clouds = new Image();
     var flag = new Image();
+    var pause_img = new Image();
+    var gameover_img = new Image();
+    var blood_spot = new Image();
     flag.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/finish_flag.png";
     clouds.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/clouds_s.png"
     angry_sun.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/angry_sun.png"
     sun.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/sun.png"
     background.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/sky2.png";
+    pause_img.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/pause_game.png";
+    gameover_img.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/gameover_img.png";
+    blood_spot.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/blood_spot.svg";
     return {
         width: canvas.width,
         height: canvas.height,
@@ -90,6 +96,36 @@ define(["vector" ,"lines"], function (vector) {
           ctx.stroke();
         },
 
+        show_game_over: function () {
+          if (gameover_img.complete) {
+            ctx.drawImage(gameover_img, offset.x, 0 );
+          } else {
+            gameover_img.onload = function () {
+              ctx.drawImage(gameover_img, offset.x, 0 );
+            };
+          }
+        },
+
+        pause_image: function () {
+          if (pause_img.complete) {
+            ctx.drawImage(pause_img, offset.x + 200, 200 );
+          } else {
+            pause_img.onload = function () {
+              ctx.drawImage(pause_img, offset.x, 0 );
+            };
+          }
+        },
+
+        show_blood_spot: function () {
+          if (blood_spot.complete) {
+            ctx.drawImage(blood_spot, offset.x, 0 );
+          } else {
+            blood_spot.onload = function () {
+              ctx.drawImage(blood_spot, offset.x, 0 );
+            };
+          }
+        },
+
         line: function(p1, p2, type) {
           ctx.lineWidth = 1;
           if (type === "back spring") {
@@ -122,22 +158,31 @@ define(["vector" ,"lines"], function (vector) {
                 i++;
               }
               ctx.lineTo(arr[--i].p2.x, 600);
+              // let x1 = arr[i].p1.x;
+              // let x2 = arr[i].p2.x;
+              // let y1 = arr[i].p1.y;
+              // let y2 = arr[i].p2.y;
+              // let y = arr[i].p1.y;
+              // console.log((3940 - x1) / (Math.tan(Math.atan(Math.abs((y2 - y1)) / (x2 - x1)))), y, x1, Math.atan(Math.abs((y2 - y1)) / (x2 - x1)), Math.tan(Math.atan(Math.abs((y2 - y1)) / (x2 - x1))));
+              // let flag_pos = y + (3940 - x1) * (Math.tan(Math.atan(Math.abs((y2 - y1)) / (x2 - x1))));
               ctx.lineTo(arr[0].p1.x, 600);
               ctx.lineTo(arr[0].p1.x, arr[0].p1.y);
               ctx.stroke();
               ctx.closePath();
               ctx.fill();
+              this.final_flag(arr[i].p2.y);
           }
         },
 
-        final_flag: function() {
+        final_flag: function(flag_pos) {
           ctx.beginPath();
-          ctx.moveTo(3995, 360);
+          ctx.moveTo(3940, flag_pos);
+          // console.log(flag_pos);
           if (flag.complete) {
-            ctx.drawImage(flag, 3940, 300);
+            ctx.drawImage(flag, 3940, flag_pos - 58);
           } else {
             flag.onload = function () {
-              ctx.drawImage(flag, 3980, 350);
+              ctx.drawImage(flag, 3940, flag_pos - 48);
             };
           }
           ctx.closePath();
@@ -145,6 +190,11 @@ define(["vector" ,"lines"], function (vector) {
 
         clear: function() {
             ctx.clearRect(offset.x, offset.y, 800, 600);
+        },
+
+        new_raund: function () {
+          this.moveView(-offset.x, -offset.y);
+          offset = vector();
         },
 
         moveView: function(diffx, diffy) {
