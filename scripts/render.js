@@ -24,7 +24,7 @@ define(["vector" ,"lines"], function (vector) {
     pause_img.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/pause_game.png";
     gameover_img.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/gameover_img.png";
     blood_spot.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/blood_spot.png";
-    level_up.src = "/Users/albertabdrashitov/Desktop/elmo/elmo_game/images/level_up.png";
+    level_up.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/level_up.png";
     return {
         width: canvas.width,
         height: canvas.height,
