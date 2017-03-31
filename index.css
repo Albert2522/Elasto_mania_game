@@ -100,7 +100,16 @@ img {
   padding: 30px;
   width: 30px;
 }
+h2 {
+  margin-left: 6px;
+}
 p {
   margin: 0;
   padding: 8% 0;
+}
+.stat {
+  color: rgb(30, 255, 30);
+}
+#levelProgress {
+  margin-left: 25%;
 }
