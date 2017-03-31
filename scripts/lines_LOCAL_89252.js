@@ -55,10 +55,6 @@ define(["physics"], function (physics) {
     return {
       mapGenerator: mapGenerator
     }
-    // return {
-    //   mapGenerator: mapGenerator
-    // }
-
 
     // return [
     //   physics.line(0, 0, 0, 400),
