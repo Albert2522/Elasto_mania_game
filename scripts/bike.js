@@ -26,6 +26,7 @@ function (vector, physics, render, lines) {
         },
 
         renew_pos: function () {
+          var mode = window.mode === "normal" ? 80 : 180;
           circles = [physics.circle(20, 150, 0),
                      physics.circle(20, 200, 86),
                      physics.circle(20, 100, 86)];
@@ -33,9 +34,9 @@ function (vector, physics, render, lines) {
           head = circles[0];
           front = circles[1];
           back = circles[2];
-          constraints = [physics.constraint(head, front, 80),
-                         physics.constraint(head, back, 80),
-                         physics.constraint(front, back, 80)];
+          constraints = [physics.constraint(head, front, mode),
+                         physics.constraint(head, back, mode),
+                         physics.constraint(front, back, mode)];
         },
 
         update: function() {
