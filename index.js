@@ -102,7 +102,17 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval( () => {
     document.querySelector("#levelProgress").textContent = levelProgress();
     document.querySelector("#levelCount").textContent = (window.level);
-    document.querySelector("#lifeCount").textContent = (window.lives);
+
+    // document.querySelector("#lifeCount").textContent = (window.lives);
+
+    if (window.lives === 2) {
+      document.querySelector(".lifeHeart:nth-of-type(4)").style.visibility = "hidden";
+    } else if (window.lives === 1) {
+      document.querySelector(".lifeHeart:nth-of-type(3)").style.visibility = "hidden";
+    } else if (window.lives === 0) {
+      document.querySelector(".lifeHeart:nth-of-type(2)").style.visibility = "hidden";
+    }
+
     // console.log(levelProgress());
   }, 100);
 })
