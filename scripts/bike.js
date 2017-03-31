@@ -34,6 +34,8 @@ function (vector, physics, render, lines) {
           head = circles[0];
           front = circles[1];
           back = circles[2];
+          window.front_wheel = front;
+          window.back_wheel = back;
           constraints = [physics.constraint(head, front, mode),
                          physics.constraint(head, back, mode),
                          physics.constraint(front, back, mode)];

@@ -82,6 +82,10 @@ function init() {
     // stats = new Stats();
     // document.body.appendChild(stats.domElement);
     window.lines = lines.mapGenerator(window.level);
+    window.revcel = false;
+    window.accel = false;
+    window.break = false;
+    window.mouse_pressed = false;
     window.new_game = false;
     window.lives = 3;
     window.change_mode = false;
@@ -98,6 +102,18 @@ function update() {
     render.clear();
     render.background();
     render.line(window.lines, 0);
+    if (window.mouse_pressed) {
+      bike.accelerating = window.accel === true ? true : false;
+      bike.breaking = window.break === true ? true : false;
+      if (window.revcel && !window.accel) {
+        window.bike_reverse = true;
+        bike.accelerating = true;
+      } else if (!window.revcel && !window.accel) {
+        window.bike_reverse = false;
+        bike.accelerating = false;
+      }
+      window.mouse_pressed = false;
+    }
     bike.update();
     // render.blit();
 

@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.jellyness = jellyValue / 800 > 0.01 ? jellyValue / 800: 0.02;
     document.querySelector("#jellyStat").textContent = jellyValue;
   });
-  console.log(document.getElementById("jellySlider"));
 
   document.getElementById("newButton").addEventListener("click", function() {
     window.new_game = true;
@@ -66,23 +65,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("accelerateButton").addEventListener("mousedown", function() {
-    console.log("here");
-    document.dispatchEvent(keyboardEvent);
+    window.mouse_pressed = true;
+    window.accel = true;
   });
 
   document.getElementById("accelerateButton").addEventListener("mouseup", function() {
-    document.dispatchEvent(keyboardEvent2);
+    window.mouse_pressed = true;
+    window.accel = false;
   });
 
-  // document.getElementById("reverseButton").addEventListener("click", function() {
-  //   window.mode = "stilts";
-  //   window.change_mode = true;
-  // });
-  //
-  // document.getElementById("brakeButton").addEventListener("click", function() {
-  //   window.mode = "stilts";
-  //   window.change_mode = true;
-  // });
+  document.getElementById("reverseButton").addEventListener("mousedown", function() {
+    window.mouse_pressed = true;
+    window.revcel = true;
+  });
+
+  document.getElementById("reverseButton").addEventListener("mouseup", function() {
+    window.mouse_pressed = true;
+    window.revcel = false;
+  });
+
+  document.getElementById("brakeButton").addEventListener("mousedown", function() {
+    window.mouse_pressed = true;
+    window.break = true;
+  });
+
+  document.getElementById("brakeButton").addEventListener("mouseup", function() {
+    window.mouse_pressed = true;
+    window.break = false;
+  });
 
   document.getElementById("pauseButton").addEventListener("click", function() {
     window.pause = window.lives === 0 ? window.pause : !window.pause;
@@ -92,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#levelProgress").textContent = levelProgress();
     document.querySelector("#levelCount").textContent = (window.level);
     document.querySelector("#lifeCount").textContent = (window.lives);
-    document.getElementById("jellySlider").value = String(window.jellyness);
     // console.log(levelProgress());
   }, 100);
 })
