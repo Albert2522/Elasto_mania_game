@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#levelProgress").textContent = levelProgress();
     document.querySelector("#levelCount").textContent = (window.level);
     document.querySelector("#lifeCount").textContent = (window.lives);
-    document.getElementById("jellySlider").value = String(window.jellyness);
     // console.log(levelProgress());
   }, 100);
 })

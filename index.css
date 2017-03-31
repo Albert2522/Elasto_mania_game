@@ -1,6 +1,6 @@
 body {
-  margin: 0;
-  padding: 0;
+  /*margin: 0;
+  padding: 0;*/
   font-family: 'Press Start 2P';
   background:
     linear-gradient(
@@ -35,7 +35,7 @@ h1 {
   padding: 0;
 }
 header {
-  background: rgba(255, 255, 255, 0.3);
+  /*background: rgba(255, 255, 255, 0.3);*/
   margin: 0;
   padding: 10px 0 10px 0;
 }
@@ -76,25 +76,13 @@ button:hover {
   margin: 0;
 }
 .sidebarButton {
+  text-align: center;
   padding: inherit;
-  margin-left: -20px;
-  background: linear-gradient(
-    rgba(200, 250, 250, 0.3),
-    rgba(200, 250, 250, 0.0)
-  );
+  margin-left: -25px;
 }
 .sidebarButton:hover {
-  background: linear-gradient(
-    rgba(0, 250, 250, 0.3),
-    rgba(0, 250, 250, 0.15)
-  );
-}
-hr {
-  margin: 0;
-  width: 220px;
-  height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #2a2a2a inset;
+  background: rgba(0, 0, 80, 0.7);
+  cursor: pointer;
 }
 img {
   width: 80px;
@@ -115,7 +103,8 @@ h3 {
   color: rgb(30, 255, 30);
 }
 input[type="range"] {
-  width: 280px;
+  margin: inherit auto;
+  width: 270px;
   height: 50px;
 }
 #levelProgress {
@@ -125,9 +114,16 @@ input[type="range"] {
   cursor: pointer;
 }
 #jellynessBox {
+  height: 4em;
+  font-size: 1.2em;
   padding: 5px;
   margin: 0 auto;
   border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 80, 0.7);
+  border-color: white;
+  border-width: medium;
+  border-radius: 5px;
+  color: white;
 }
 #jellySliderJelly {
   float: left;
