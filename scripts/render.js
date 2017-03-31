@@ -2,6 +2,7 @@ define(["vector" ,"lines"], function (vector) {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     var offset = vector();
+    window.offset = offset;
     var twoPI = Math.PI / 10 + 0.0001;
     var head = new Image();
     var wheel = new Image();
@@ -36,7 +37,6 @@ define(["vector" ,"lines"], function (vector) {
           } else {
             background.onload = function () {
               ctx.drawImage(background,0,0);
-              console.log("complete");
             };
           }
           ctx.stroke;
@@ -216,7 +216,6 @@ define(["vector" ,"lines"], function (vector) {
             ctx.translate(-diffx, -diffy);
             offset.x += diffx;
             offset.y += diffy;
-            window.offset = offset.x;
         },
 
         blit: function() {

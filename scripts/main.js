@@ -5,10 +5,6 @@ function (vector, render, physics, bike, lines) {
 var stats = {};
 window.level = 1;
 
-if (true) {
-  console.log("HERE");
-}
-
 window.requestAnimFrame = (function() {
     return  window.requestAnimationFrame       ||
             window.webkitRequestAnimationFrame ||
@@ -18,7 +14,7 @@ window.requestAnimFrame = (function() {
             };
 })();
 
-document.getElementById("newButton").addEventListener("click", () => alert("here"));
+// document.getElementById("newButton").addEventListener("click", () => alert("here"));
 
 // Handle keyboard input
 document.onkeypress = function(ev) {
@@ -62,33 +58,32 @@ document.onkeyup = function(ev) {
 };
 
 // Handle mouse input
-var mouse = {
-    clicked: false,
-    pos: vector(),
-};
-
-document.onmousedown = function(ev) {
-    mouse.clicked = true;
-    mouse.pos.x = ev.screenX;
-    mouse.pos.y = ev.screenY;
-};
-
-document.onmouseup = function(ev) {
-    console.log(ev.screenX);
-    mouse.clicked = false;
-};
-
-document.onmousemove = function(ev) {
-    if (mouse.clicked) {
-        render.moveView(-ev.screenX + mouse.pos.x, 0);
-        mouse.pos.x = ev.screenX;
-        // mouse.pos.y = ev.screenY;
-    }
-};
+// var mouse = {
+//     clicked: false,
+//     pos: vector(),
+// };
+//
+// document.onmousedown = function(ev) {
+//     mouse.clicked = true;
+//     mouse.pos.x = ev.screenX;
+//     mouse.pos.y = ev.screenY;
+// };
+//
+// document.onmouseup = function(ev) {
+//     mouse.clicked = false;
+// };
+//
+// document.onmousemove = function(ev) {
+//     if (mouse.clicked) {
+//         render.moveView(-ev.screenX + mouse.pos.x, 0);
+//         mouse.pos.x = ev.screenX;
+//         mouse.pos.y = ev.screenY;
+//     }
+// };
 
 function init() {
-    stats = new Stats();
-    document.body.appendChild(stats.domElement);
+    // stats = new Stats();
+    // document.body.appendChild(stats.domElement);
     window.lines = lines.mapGenerator(window.level);
     window.lives = 3;
     window.jellyness = 0.04;
@@ -106,7 +101,7 @@ function update() {
     bike.update();
     // render.blit();
 
-    stats.update();
+    // stats.update();
     if (window.restart_round) {
       setTimeout( () => {
         window.pause = false;

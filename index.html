@@ -4,7 +4,7 @@
     <title>Extreme Jelly Bike 2</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script> -->
     <script src="scripts/libs/stats.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script data-main="scripts/main" src="scripts/libs/require.js"></script>
@@ -14,13 +14,13 @@
       <h1>Extreme Jelly Bike 2</h1>
     </header>
     <!-- Left Side Bar -->
-    <div class="left">
+    <div class="left" id="classLeft">
       <button type="button" id="newButton">NEW GAME</button>
       <button type="button" id="normalButton">NORMAL</button>
       <button type="button" id="stiltsButton">STILTS MODE</button>
       <div id="jellynessBox">
         <p>Set Jellyness</p>
-        <input type="range" id="jellySlider" min="0.01" max="0.24" value="0.04">
+        <input type="range" id="jellySlider">
       </div>
       <h2>LEVEL: <span class="stat" id="levelCount"></span></h2>
       <h2>LIVES: <span class="stat" id="lifeCount"></span></h2>
