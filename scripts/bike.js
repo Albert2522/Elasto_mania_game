@@ -6,6 +6,8 @@ function (vector, physics, render, lines) {
     var head = circles[0];
     var front = circles[1];
     var back = circles[2];
+    window.front_wheel = front;
+    window.back_wheel = back;
     var constraints = [physics.constraint(head, front, 80),
                        physics.constraint(head, back, 80),
                        physics.constraint(front, back, 80)];
@@ -37,6 +39,21 @@ function (vector, physics, render, lines) {
         },
 
         update: function() {
+            if (window.bike_reverse) {
+              wheelAcceleration =  wheelAcceleration > 0 ? -wheelAcceleration : wheelAcceleration;
+              if (front === window.front_wheel) {
+                var temp = front;
+                front = back;
+                back = temp;
+              }
+            } else {
+              wheelAcceleration =  wheelAcceleration < 0 ? -wheelAcceleration : wheelAcceleration;
+              if (front !== window.front_wheel) {
+                var temp = front;
+                front = back;
+                back = temp;
+              }
+            }
             var that = this;
 
             constraints.forEach(function (constraint) {
@@ -50,7 +67,7 @@ function (vector, physics, render, lines) {
               }
             });
 
-            if (head.pos.x >= 3940) {
+            if (head.pos.x >= 3900) {
               window.finish = true;
             }
 

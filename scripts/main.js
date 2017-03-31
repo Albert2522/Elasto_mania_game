@@ -22,17 +22,22 @@ window.requestAnimFrame = (function() {
 document.onkeypress = function(ev) {
     //console.log(ev.keyCode)
     switch(ev.keyCode) {
-    case 119:
+    case 100:
         bike.accelerating = true;
         break;
-    case 115:
+    case 97:
         bike.breaking = true;
         break;
     case 32:
         bike.swap();
         break;
+    case 115:
+        window.bike_reverse = true;
+        bike.accelerating = true;
+        break;
     case 13:
         window.pause = window.lives === 0 ? window.pause : !window.pause;
+        break;
     default:
         console.log("keyCode: " + ev.keyCode);
         break;
@@ -41,10 +46,14 @@ document.onkeypress = function(ev) {
 
 document.onkeyup = function(ev) {
     switch(ev.keyCode) {
-    case 87:
+    case 83:
+      window.bike_reverse = false;
+      bike.accelerating = false;
+      break;
+    case 68:
         bike.accelerating = false;
         break;
-    case 83:
+    case 65:
         bike.breaking = false;
         break;
     }
@@ -82,11 +91,11 @@ function init() {
     window.restart_round = false;
     window.pause = false;
     window.finish = false;
+    window.level_up = false;
     start();
 }
 
 function update() {
-    console.log(window.lives);
     render.clear();
     render.background();
     render.line(window.lines, 0);
@@ -111,10 +120,16 @@ function update() {
 
     if (window.finish) {
       window.level += 1;
+      window.level_up = true;
       window.lines = lines.mapGenerator(window.level);
       bike.renew_pos();
       render.new_raund();
       window.finish = false;
+    }
+
+    if (window.level_up) {
+      render.show_level_up();
+      setTimeout( () => {window.level_up = false;}, 3000);
     }
 }
 

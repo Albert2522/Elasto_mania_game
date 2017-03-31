@@ -15,6 +15,7 @@ define(["vector" ,"lines"], function (vector) {
     var pause_img = new Image();
     var gameover_img = new Image();
     var blood_spot = new Image();
+    var level_up = new Image();
     flag.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/finish_flag.png";
     clouds.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/clouds_s.png"
     angry_sun.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/angry_sun.png"
@@ -23,6 +24,7 @@ define(["vector" ,"lines"], function (vector) {
     pause_img.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/pause_game.png";
     gameover_img.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/gameover_img.png";
     blood_spot.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/blood_spot.png";
+    level_up.src = "/Users/albertabdrashitov/Desktop/elmo/elmo_game/images/level_up.png";
     return {
         width: canvas.width,
         height: canvas.height,
@@ -118,11 +120,20 @@ define(["vector" ,"lines"], function (vector) {
 
         show_blood_spot: function () {
           if (blood_spot.complete) {
-            console.log("here");
-            ctx.drawImage(blood_spot, offset.x, 50 );
+            ctx.drawImage(blood_spot, offset.x, 80, 450, 450 );
           } else {
             blood_spot.onload = function () {
               ctx.drawImage(blood_spot, offset.x, 0 );
+            };
+          }
+        },
+
+        show_level_up: function () {
+          if (level_up.complete) {
+            ctx.drawImage(level_up, offset.x + 250, 80 );
+          } else {
+            level_up.onload = function () {
+              ctx.drawImage(level_up, offset.x, 0 );
             };
           }
         },
@@ -204,6 +215,7 @@ define(["vector" ,"lines"], function (vector) {
             ctx.translate(-diffx, -diffy);
             offset.x += diffx;
             offset.y += diffy;
+            window.offset = offset.x;
         },
 
         blit: function() {

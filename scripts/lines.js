@@ -3,9 +3,9 @@ define(["physics"], function (physics) {
     //         physics.line(90, 250, 140, 150)];
 
     var mapGenerator = function(level) {
-      let max_high_between = 10 + (level - 1) * 2;
+      let max_high_between = 10 + (level - 1) * 4;
       let initial_height = 350;
-      let min_distance_between = 100 - (level - 1) * 2;
+      let min_distance_between = 100 - (level - 1) * 8;
       let curr_x = 230;
       let curr_y = initial_height;
       let arr = [ ];
