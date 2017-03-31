@@ -1,7 +1,106 @@
-#canvas {
-  border: 1px solid black;
-  margin: auto 0;
-}
 body {
-  color: blue;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P';
+  background:
+    linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.3),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 0, 0, 0.3)),
+    url("https://thumbs.dreamstime.com/t/black-road-background-texture-asphalt-pattern-67411783.jpg");
+}
+.left {
+  float: left;
+  width: 20%;
+  height: 100%;
+}
+.right {
+  float: right;
+  margin-right: -1%;
+  padding-left: 1.5%;
+  padding-bottom: 10%;
+  width: 19%;
+  height: 100%;
+}
+h1 {
+  text-shadow: -1px -1px rgb(220, 0, 0),
+                1px  1px rgb(220, 0, 0),
+               -2px -2px rgb(220, 220, 220),
+                2px  2px rgb(220, 220, 220);
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0;
+  padding: 10px 0 10px 0;
+}
+.canvasContainer {
+  padding: 0;
+  margin: 0 20%;
+  height: 100%;
+}
+canvas {
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  border: 3px solid rgba(100, 0, 0, 0.5);
+}
+.header {
+  text-align: center;
+  padding: 2em 0;
+}
+button {
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  padding: 16.66% 0;
+  margin: 0;
+  border-color: white;
+  border-width: medium;
+  border-radius: 5px;
+  color: white;
+  background: rgba(0, 0, 80, 0.7);
+  height: 4em;
+}
+button:hover {
+  cursor: pointer;
+  color: rgb(220, 0, 0);
+  border: 4px solid rgb(220, 0, 0);
+  transition: 0.3s;
+  font-size: 100%;
+  margin: 0;
+}
+.sidebarButton {
+  padding: inherit;
+  margin-left: -20px;
+  background: linear-gradient(rgba(200, 250, 250, 0.3), rgba(200, 250, 250, 0.0));
+}
+.sidebarButton:hover {
+  background: linear-gradient(rgba(0, 250, 250, 0.3), rgba(0, 250, 250, 0.15));
+}
+hr {
+  margin: 0;
+  width: 220px;
+  height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #2a2a2a inset;
+}
+img {
+  width: 50px;
+}
+#spacebarImg {
+  width: 200px;
+}
+.difficultyButton {
+  height: 2em;
+  padding: 30px;
+  width: 30px;
+}
+p {
+  margin: 0;
+  padding: 8% 0;
 }

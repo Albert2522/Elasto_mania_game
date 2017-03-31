@@ -1,0 +1,55 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-image: url("https://thumbs.dreamstime.com/t/black-road-background-texture-asphalt-pattern-67411783.jpg");
+  margin: 0;
+}
+#stripe {
+  text-align: center;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+h1 {
+  text-shadow: -1px -1px rgb(220, 0, 0),
+                1px  1px rgb(220, 0, 0),
+               -2px -2px rgb(220, 220, 220),
+                2px  2px rgb(220, 220, 220);
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+#canvas {
+  width: 100%;
+  border: 1px solid black;
+}
+.header {
+  text-align: center;
+  padding: 2em 0;
+}
+button {
+  font-family: inherit;
+  width: 15%;
+  padding: 0;
+  margin: 5px 0;
+  border-color: white;
+  border-width: medium;
+  border-radius: 5px;
+  color: white;
+  background: rgba(0, 0, 80, 0.7);
+  height: 4em;
+}
+button:hover {
+  color: rgb(220, 0, 0);
+  border-color: rgb(220, 0, 0);
+  transition: 0.4s;
+  font-size: 80%;
+  margin: 0;
+}

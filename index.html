@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Elasto Mania</title>
+    <title>Extreme Jelly Bike 2</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
     <script src="scripts/libs/stats.js"></script>
     <script data-main="scripts/main" src="scripts/libs/require.js"></script>
   </head>
-
   <body>
-    <canvas id="canvas" width="800px" height="600px"></canvas>
+    <header>
+      <h1>Extreme Jelly Bike 2</h1>
+    </header>
+    <!-- Left Side Bar -->
+    <div class="left">
+      <button type="button" id="newButton">NEW GAME</button>
+      <button type="button" id="easyButton">EASY</button>
+      <button type="button" id="hardButton">HARD</button>
+    </div>
+    <!-- Right Side Bar -->
+    <div class="right">
+      <h3>INSTRUCTIONS</h3>
+      <hr>
+      <div class="sidebarButton" id="accelerateButton">
+        <p>ACCELERATE:</p>
+        <img src="https://img.webnots.com/2014/03/D1.png" alt="D">
+      </div>
+      <div class="sidebarButton" id="reverseButton">
+        <p>REVERSE:</p>
+        <img src="https://img.webnots.com/2014/03/S1.png" alt="S">
+      </div>
+      <div class="sidebarButton" id="brakeButton">
+        <p>BRAKE:</p>
+        <img src="https://img.webnots.com/2014/03/A1.png" alt="A">
+      </div>
+      <div class="sidebarButton" id="pauseButton">
+        <p>PAUSE GAME:</p>
+        <img id="spacebarImg" src="https://img.webnots.com/2014/03/Space1.png" alt="Spacebar">
+      </div>
+    </div>
+    <!-- Screen Container -->
+    <div class="canvasContainer">
+      <canvas id="canvas" width='800' height='600'></canvas>
+      <!-- <button type="button" id="pauseButton">PAUSE GAME</button> -->
+    </div>
+    
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

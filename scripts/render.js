@@ -16,7 +16,7 @@ define(["vector" ,"lines"], function (vector) {
     clouds.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/clouds_s.png"
     angry_sun.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/angry_sun.png"
     sun.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/sun.png"
-    background.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/sky1.png";
+    background.src = "https://raw.githubusercontent.com/Albert2522/Elasto_mania_game/master/images/sky2.png";
     return {
         width: canvas.width,
         height: canvas.height,
@@ -28,6 +28,7 @@ define(["vector" ,"lines"], function (vector) {
           } else {
             background.onload = function () {
               ctx.drawImage(background,0,0);
+              console.log("complete");
             };
           }
           ctx.stroke;
