@@ -4,7 +4,6 @@
     <title>Extreme Jelly Bike 2</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script> -->
     <script src="scripts/libs/stats.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script data-main="scripts/main" src="scripts/libs/require.js"></script>
@@ -19,32 +18,31 @@
       <button type="button" id="normalButton">NORMAL</button>
       <button type="button" id="stiltsButton">STILTS MODE</button>
       <div id="jellynessBox">
-        <p>Set Jellyness</p>
+        <span id="jellySliderStiff">Jelly</span><span id="jellySliderJelly">Stiff</span>
         <input type="range" id="jellySlider">
       </div>
-      <h2>LEVEL: <span class="stat" id="levelCount"></span></h2>
+      <h2>LEVEL: <span class="stat" id="levelCount"><br></span></h2>
       <h2>LIVES: <span class="stat" id="lifeCount"></span></h2>
       <h2>PROGRESS: <span class="stat" id="levelProgress"></span></h2>
-      <h2>JELLYNESS: <span class="stat" id="jellyStat"></span></h2>
     </div>
     <!-- Right Side Bar -->
     <div class="right">
-      <h3>INSTRUCTIONS</h3>
+      <h3>CONTROLS</h3>
       <hr>
       <div class="sidebarButton" id="accelerateButton">
-        <p>ACCELERATE:</p>
+        <h3>ACCELERATE:</h3>
         <img src="https://img.webnots.com/2014/03/D1.png" alt="D">
       </div>
       <div class="sidebarButton" id="reverseButton">
-        <p>REVERSE:</p>
+        <h3>REVERSE:</h3>
         <img src="https://img.webnots.com/2014/03/S1.png" alt="S">
       </div>
       <div class="sidebarButton" id="brakeButton">
-        <p>BRAKE:</p>
+        <h3>BRAKE:</h3>
         <img src="https://img.webnots.com/2014/03/A1.png" alt="A">
       </div>
       <div class="sidebarButton" id="pauseButton">
-        <p>PAUSE GAME:</p>
+        <h3>PAUSE GAME:</h3>
         <img id="spacebarImg" src="https://img.webnots.com/2014/03/Space1.png" alt="Spacebar">
       </div>
     </div>
